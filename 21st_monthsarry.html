@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>21st Monthsary 🌸</title>
+
+<style>
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Georgia", serif;
+    background: linear-gradient(#fff0f5, #fff8e7);
+}
+
+
+/* Sakura petals */
+
+.petal {
+    position: absolute;
+    top: -20px;
+    font-size: 25px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+
+    from {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+
+}
+
+
+/* Main card */
+
+.card {
+
+    background: rgba(255,255,255,0.85);
+    width: 80%;
+    max-width: 420px;
+    padding: 35px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+
+h1 {
+
+    color: #b76e79;
+}
+
+
+p {
+
+    color: #555;
+    line-height: 1.8;
+
+}
+
+
+button {
+
+    background: #d88b9a;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+
+}
+
+
+button:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="petal" style="left:10%; animation-duration:8s;">🌸</div>
+<div class="petal" style="left:30%; animation-duration:10s;">🌸</div>
+<div class="petal" style="left:50%; animation-duration:7s;">🌸</div>
+<div class="petal" style="left:70%; animation-duration:12s;">🌸</div>
+<div class="petal" style="left:90%; animation-duration:9s;">🌸</div>
+
+
+
+<div class="card">
+
+<h1>
+21st Monthsary 🌸
+</h1>
+
+
+<p id="message">
+
+ようこそ (Welcome) 🤍<br><br>
+
+A little Japanese-inspired page
+made with love and memories.
+
+</p>
+
+
+<button onclick="next()">
+
+Next Page ✨
+
+</button>
+
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="card" id="page2" style="display:none;">
+
+<h1>
+Our Memories 🌸
+</h1>
+
+<p>
+Page 2 🏯<br><br>
+
+Like sakura flowers,
+our memories continue to bloom.
+
+Every laugh, every moment,
+and every story is something special. 🤍
+
+</p>
+
+<button onclick="showPage3()">
+Next Page ✨
+</button>
+
+</div>
+<!-- PAGE 3 -->
+
+<div class="card" id="page3" style="display:none;">
+
+<h1>
+A Little Letter 💌
+</h1>
+
+<p>
+
+To my favorite person... 🤍<br><br>
+
+Thank you for being part of my story.
+Through every moment, every laugh,
+and every memory we create,
+I will always treasure them. 🌸<br><br>
+
+May our story continue like sakura flowers
+that bloom again and again.
+
+</p>
+
+<button onclick="showPage4()">
+Next Page 🌙
+</button>
+
+</div>
+<scriptfunction showPage3(){
+
+    document.getElementById("page2").style.display="none";
+
+    document.getElementById("page3").style.display="block";
+
+}>function showPage2(){
+
+document.querySelector(".card").style.display="none";
+
+document.getElementById("page2").style.display="block";
+
+}
+
+
+function showPage3(){
+
+document.getElementById("page2").style.display="none";
+
+document.getElementById("page3").style.display="block";
+
+}
+
+let page = 0;
+
+
+function next(){
+
+page++;
+
+
+let message = document.getElementById("message");
+
+
+if(page == 1){
+
+message.innerHTML =
+"Page 1 🌸<br><br>
+Every story begins with a small moment,
+and ours became something special.";
+
+}
+
+
+else if(page == 2){
+
+message.innerHTML =
+"Page 2 🏯<br><br>
+Like sakura flowers,
+I hope our memories continue to bloom.";
+
+}
+
+
+else if(page == 3){
+
+message.innerHTML =
+"Final Page 💌<br><br>
+Thank you for being part of my story.
+Happy 21st Monthsary 🤍";
+
+}
+
+
+else {
+
+message.innerHTML =
+"More chapters coming soon 🌸";
+
+}
+
+
+}
+
+</script>
+
+
+</body>
+</html>
