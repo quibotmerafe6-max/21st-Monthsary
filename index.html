@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mera ❤️ Shawny</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffd6e7,#fff5f9);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.card{
+background:rgba(255,255,255,.9);
+padding:30px;
+border-radius:25px;
+width:350px;
+text-align:center;
+backdrop-filter:blur(12px);
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+position:relative;
+z-index:2;
+animation:fade 1s;
+}
+
+h1{
+color:#ff4f8b;
+margin-bottom:10px;
+}
+
+h2{
+color:#666;
+margin-bottom:20px;
+}
+
+button{
+background:#ff4f8b;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff2f73;
+}
+
+#letter{
+display:none;
+margin-top:20px;
+text-align:left;
+white-space:pre-wrap;
+line-height:1.7;
+color:#555;
+}
+
+.heart{
+position:absolute;
+animation:float 7s linear infinite;
+opacity:.8;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+to{
+transform:translateY(-120px);
+opacity:0;
+}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🐼💕</h1>
+
+<h1>Mera (Bubu) ❤️ Shawny (Dudu)</h1>
+
+<h2>Happy 21st Monthsary 🌸</h2>
+
+<p>Every love story is beautiful,<br>but ours is my favorite.</p>
+
+<br>
+
+<button onclick="openLetter()">
+Open My Letter 💌
+</button>
+
+<div id="letter"></div>
+<script>
+const letter = `Happy 21st Monthsary, loloveee, motka dudu! ❤️
+
+You know that I love you so, so much. Thank you for making me feel special every single day and for making me feel loved and treasured.
+
+I'm so grateful that I have you as my partner, my best friend, my enemy, my frenemy... You're my everything, lolove, my motka dudu. 🐼💕
+
+I'm sorry for hurting you unintentionally and sometimes for being too childish.
+
+I'm trying to become a better person for you and for us every single day. I keep fighting my overthinking so it won't ruin the beautiful relationship we have.
+
+Thank you for staying.
+Thank you for choosing me.
+
+I love you so much.
+I hope we have many more years together.
+
+Let's continue understanding each other, communicating openly, and choosing each other every single day.
+
+Forever yours,
+❤️ Mera (Bubu)`;
+
+let i = 0;
+
+function openLetter() {
+  document.getElementById("letter").style.display = "block";
+  document.getElementById("letter").innerHTML = "";
+  i = 0;
+  type();
+}
+
+function type() {
+  if (i < letter.length) {
+    document.getElementById("letter").innerHTML += letter.charAt(i);
+    i++;
+    setTimeout(type, 35);
+  }
+}
+
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = Math.random() > 0.5 ? "❤️" : "🌸";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (18 + Math.random() * 20) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 7000);
+}, 350);
+</script>
+
+</body>
+</html>
